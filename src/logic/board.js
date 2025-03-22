@@ -1,4 +1,4 @@
-import { combosGanadores } from "../constants";
+import { combosGanadores } from "../constants"
 
 export const checkWinner = (boardToCheck) => {
     for (const combo of combosGanadores) {
