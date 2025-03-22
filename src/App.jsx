@@ -1,35 +1,9 @@
 import { useState } from "react";
 import confetti from "canvas-confetti"
-
-
-const TURNS = {
-  X: "x",
-  O: "o",
-};
-const Square = ({ children, updateBoard, isSelectd, index }) => {
-  const className = `square ${isSelectd ? "is-selected" : ""}`;
-
-  const handleClick = () => {
-    updateBoard(index);
-  };
-
-  return (
-    <div className={className} onClick={handleClick}>
-      {children}
-    </div>
-  );
-};
-
-const combosGanadores = [
-  [0, 1, 2],
-  [3, 4, 5],
-  [5, 6, 7],
-  [0, 3, 6],
-  [1, 4, 7],
-  [2, 5, 8],
-  [0, 4, 8],
-  [2, 4, 6],
-];
+import { Square } from "./components/Square";
+import { TURNS } from "./constants";
+import { checkWinner, checkEndGame } from "./logic/board";
+import  { Winner } from "./components/Winner";
 
 function App() {
   const [board, setBoard] = useState(Array(9).fill(null));
@@ -44,24 +18,8 @@ function App() {
     setWinner(null);
   };
 
-  const checkWinner = (boardToCheck) => {
-    for (const combo of combosGanadores) {
-      const [a, b, c] = combo;
-      if (
-        boardToCheck[a] &&
-        boardToCheck[a] === boardToCheck[b] &&
-        boardToCheck[a] === boardToCheck[c]
-      ) {
-        return boardToCheck[a];
-      }
-    }
-
-    return null;
-  };
-
-  const checkEndGame = (newBoard)=>{
-    return newBoard.every((square) => square !== null)
-  }
+  
+ 
 
   const updateBoard = (index) => {
     if (board[index] || winner) return;
@@ -101,21 +59,7 @@ function App() {
         <Square isSelectd={turn == TURNS.O}>{TURNS.O}</Square>
       </section>
 
-      {winner !== null && (
-        <section className="winner">
-          <div className="text">
-            <h2>{winner === false ? "Empate" : "Gano:"}</h2>
-
-            <header className="win">
-              {winner && <Square>{winner}</Square>}
-            </header>
-
-            <footer>
-              <button onClick={resetGame}>Empezar de nuevo</button>
-            </footer>
-          </div>
-        </section>
-      )}
+      <Winner resetGame={resetGame} winner={winner}/>
     </main>
   );
 }
