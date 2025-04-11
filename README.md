@@ -1,27 +1,48 @@
-# 🟢 TaTeTi - Tres en Línea
+# 🧠 TaTeTi (Tic-Tac-Toe)
 
-Este es un simple pero completo juego de **TaTeTi (Tic-Tac-Toe)** hecho con **React**, que guarda el estado del juego en el almacenamiento local del navegador para que puedas continuar más tarde. 🎮
+Este es un proyecto simple de **TaTeTi (Tic-Tac-Toe)** desarrollado con React. El objetivo es practicar conceptos como:
 
----
-
-## 🚀 Tecnologías
-
-- ⚛️ React
-- 🧠 Hooks (`useState`)
-- 🎉 canvas-confetti para mostrar confeti al ganar
-- 💾 localStorage para persistencia del juego
+- Estado con `useState`
+- Ciclo de vida con `useEffect`
+- Guardado en `localStorage`
+- Componentes reutilizables
+- Lógica de juego y condicionales
 
 ---
 
+## 🚀 Probalo online
+
+👉 Podés jugar directamente desde [esta página](https://eloquent-cupcake-53a78e.netlify.app)
 
 ---
 
-## 🧠 Lógica del juego
+## 🧩 ¿Cómo funciona?
 
-- **Tablero**: Un array de 9 posiciones (`null`, `"X"`, `"O"`).
-- **Turnos**: Alterna entre `X` y `O` usando `useState`.
-- **Ganador**: Se verifica con combinaciones ganadoras predefinidas.
-- **Empate**: Si todas las casillas están ocupadas y no hay ganador.
-- **Persistencia**: Guarda el tablero y el turno actual en `localStorage`.
+- Cada jugador hace clic en un cuadrado vacío para marcar su turno.
+- El juego alterna entre `X` y `O`.
+- Si hay un ganador, se lanza confetti 🎉 y se muestra el resultado.
+- Si se llena el tablero sin ganador, se declara empate.
+- Los datos se guardan en `localStorage` para que el juego continúe aunque recargues.
+
+---
+
+## 📦 Tecnologías usadas
+
+- React
+- JavaScript
+- Vite
+- CSS básico
+- canvas-confetti
+
+---
+
+## 🧠 Funcionalidades
+
+- ✅ Juego interactivo de 2 jugadores
+- ✅ Detección de ganador
+- ✅ Empate
+- ✅ Guardado automático en `localStorage`
+- ✅ Botón para reiniciar partida
+- ✅ Estilo visual simple pero funcional
 
 ---
