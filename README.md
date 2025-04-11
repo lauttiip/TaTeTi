@@ -12,7 +12,7 @@ Este es un proyecto simple de **TaTeTi (Tic-Tac-Toe)** desarrollado con React. E
 
 ## 🚀 Probalo online
 
-👉 Podés jugar directamente desde [esta página](https://eloquent-cupcake-53a78e.netlify.app)
+👉 Podés jugar directamente desde [esta página](https://tateti-versionlautip.netlify.app)
 
 ---
 
